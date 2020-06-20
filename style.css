@@ -1,4 +1,69 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.background{
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    
+}
+
 .title-area{
     display: flex;
     flex-direction: column;
+    text-align: center;
+    height:20%;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title-area>cite {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.title-area>p{
+    width: 350px;
+    font-size: 18px;
+    border-radius: 10px;
+    height: 50px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+table{
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+tbody{
+    display: table;
+    width: 100%;
+}
+
+tr{
+    height: 80px;
+    box-shadow: 0 0 10px black;
+}
+
+tr>.order-number{
+    background-color: grey;
+    width: 25%;
+}
+
+td{
+    width: 350px;
 }
