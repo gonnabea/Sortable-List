@@ -13,8 +13,8 @@ let nameList = ["Mark Zuckerberg", "Larry Page", "Bernard Anault", "Bill Gates",
 let filtered = [];
 let randomNames = [];
 
-const answer = ["Jeff Bazos", "Bill Gates", "Warren Buffett", "Bernard Arnault", "Carlos Slim Helu", "Amancio Ortega", "Larry Ellison",
-"Mark Zuckerberg", "Michael Bloomberg", "Larry Page"];
+const answer = ["Jeff Bazos", "Bill Gates", "Warren Buffet", "Bernard Anault", "Carlos Slim Helu", "Amancio Ortega", "Larry Ellison",
+"Mark Zuckerberg", "Michale Bloomberg", "Larry Page"];
 
 function cardDrag(e){
     draggedText = e.target.innerText;
@@ -31,9 +31,13 @@ function cardDrop(e){
 }
 
 function checkAnswer(){
-    for(let i=0 ; i < cards.length ; i++){
-        const randomNum = Math.floor(Math.random()*10);
-        cards[i].innerText = `${nameList[randomNum] + "➰"}`;
+    for(let i=0 ; i < nameList.length ; i++){
+        if(cards[i].innerText === answer[i]){
+            cards[i].style.color = "blue";
+        }else{
+            cards[i].style.color = "red";
+        }
+        cardContainer[i].addEventListener("drop", checkAnswer);
     }
 }
 

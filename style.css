@@ -71,3 +71,40 @@ td{
 .cards{
     cursor: pointer;
 }
+
+.check-btn{
+    background-color: white;
+    color: seagreen;
+    width: 100px;
+    height: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    border:none;
+    box-shadow: 0 0 5px black;
+    animation: buttonOff 0.5s forwards;
+    margin-bottom: 30px;
+}
+
+.check-btn:hover{
+    animation: buttonOn 0.5s forwards;
+}
+
+@keyframes buttonOn{
+    from{
+        background-color: white;
+    }
+    to{
+        background-color: darkkhaki;
+    }
+}
+
+
+@keyframes buttonOff{
+    from{
+        background-color: darkkhaki;
+    }
+    to{
+        background-color: white;
+    }
+}
