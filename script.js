@@ -2,6 +2,7 @@ const names = document.querySelectorAll("#names");
 const cards = document.querySelectorAll("#cards");
 const cardContainer = document.querySelectorAll("#cardContainer");
 const checkBtn = document.getElementById("checkBtn");
+const cardNumber = document.querySelectorAll("#cardNumber");
 
 console.log(cards)
 console.log(cardContainer)
@@ -33,9 +34,9 @@ function cardDrop(e){
 function checkAnswer(){
     for(let i=0 ; i < nameList.length ; i++){
         if(cards[i].innerText === answer[i]){
-            cards[i].style.color = "blue";
+            cards[i].style.color = "#5564ED";
         }else{
-            cards[i].style.color = "red";
+            cards[i].style.color = "#FF0000";
         }
         cardContainer[i].addEventListener("drop", checkAnswer);
     }
@@ -64,6 +65,14 @@ function init() {
         cards[i].addEventListener("dragstart", cardDrag);
         cardContainer[i].addEventListener("dragover", cardDragOver);
         cardContainer[i].addEventListener("drop", cardDrop);
+        cardNumber[i].addEventListener("dragover", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+        })
+        cardNumber[i].addEventListener("drop", (e) => {
+            e.preventDefault();
+            e.stopPropagation()
+        }) // 넘버 영역에 드롭되는 버그 방지
     }
     checkBtn.addEventListener("click", checkAnswer);
 }
